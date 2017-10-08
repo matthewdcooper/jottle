@@ -1,7 +1,9 @@
 # jottle
 
 > jot + bottle
+
 > jot, v. To write briefly, quickly or perhaps even hastily.
+
 > bottle, n. A glass or plastic container with a narrow neck, used for storing drinks or 
 other liquids. An umbrella term for a variety of such things, including a **Flask**.
 
