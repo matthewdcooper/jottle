@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<script>
+
+function addDot() {
+    let dots = document.getElementById("dots");
+    dots.innerText = dots.innerText + ".";
+}
+
+function redirect() {
+    window.location = "/";
+}
+
+window.onload = function() {
+    window.setInterval(addDot, 500);
+    window.setInterval(redirect, 2000);
+};
+
+</script>
+
+<p>404: not found</p>
+
+<p>redirecting home<span id="dots"></span></p>
+
+
+
+{% endblock %}

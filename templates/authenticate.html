@@ -1,0 +1,11 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<p>"Authenticating..."</p>
+<a id="link" href="/">continue</a>
+<script>document.getElementById("link").remove();window.location = "/";</script>
+
+
+{% endblock %}

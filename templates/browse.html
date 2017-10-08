@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}: {% if path == "" %}/{% else %}{{ path }}{% endif %}{% endblock %}
+
+{% block scripts %}
+  <script src="{{ url_for('static', filename='scripts/files.js') }}"></script>
+{% endblock %}
+
+{% block menu %}
+<div id="menu">
+  {% if path == "" %}
+    <span class="inactive_link">..</span> |
+  {% else %}
+    <a href="/{{ parent }}">..</a> |
+  {% endif %}
+
+  <a href="#" onclick="makeDir(); return false;">new dir</a> |
+  <a href="#" onclick="makeFile(); return false;">new file</a> |
+
+  {% if path == "" %}
+    <span class="inactive_link">rename</span> |
+    <span class="inactive_link">delete</span>
+  {% else %}
+    <a href="#" onclick="rename(); return false;">rename</a> |
+    <a href="#" onclick="del('dir'); return false;">delete</a>
+  {% endif %}
+
+  <hr>
+</div>
+{% endblock %}
+
+{% block content %}
+<h2 class="directory_header">/{{ path }}</h2>
+
+<ul class="dirs">
+  {% for d in dirs %}
+  <li><a href="{{ d.path_url }}">{{ d.name }}/</a></li>
+  {% endfor %}
+</ul>
+
+</ul>
+<ul class="files">
+  {% for f in files %}
+    <li><a href="{{ f.path_url }}">{{ f.name }}</a></li>
+  {% endfor %}
+</ul>
+{% endblock %}

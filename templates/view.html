@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}: {{ file_url }}{% endblock %}
+
+{% block scripts %}
+  <script src="/static/scripts/files.js" charset="utf-8"></script>
+  <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+{% endblock %}
+
+{% block menu %}
+<div id="menu">
+
+  <a href="{{ parent_url }}">..</a> | 
+  <a href="{{ file_url }}?edit">edit</a> |
+  <a href="#" onclick="rename(); return false;">rename</a> |
+  <a href="#" onclick="del('file'); return false;">delete</a>
+  <hr>
+
+</div>
+{% endblock %}
+
+{% block content %}
+  {{ content|safe }}
+{% endblock %}
+
+
+
+
+

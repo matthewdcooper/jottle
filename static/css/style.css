@@ -1,0 +1,47 @@
+body {
+  font-family: sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  width: 45rem;
+}
+
+
+a {
+  color: black;
+}
+
+a:link, a:visited {
+  text-decoration: none;
+}
+
+a:hover, a:active {
+  text-decoration: underline;
+}
+
+#editor { 
+width: 45rem;
+height: 40rem;
+}
+
+#menu {
+  opacity: 0.5;
+}
+
+.directory_header {
+  margin-bottom: 0.5rem;;
+}
+
+.files, .dirs {
+  list-style-type: none;
+  margin: 0;
+  padding: 0 0 0 1rem;
+}
+
+.dirs {
+  font-weight: bold;
+}
+
+.inactive_link {
+  opacity: 0.2;
+}
+
